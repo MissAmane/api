@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "mansion-api",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
+    }
+  ],
+  "env": {
+    "MANSION_CONNECTION": "@mansion-connection",
+    "MANSION_SECRET": "@mansion-secret"
+  }
+}
