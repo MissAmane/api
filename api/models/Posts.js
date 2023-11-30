@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Posts = mongoose.model(
-  'Post',
+  "Post",
   new Schema(
     {
       uuid: String,
@@ -44,6 +44,9 @@ const Posts = mongoose.model(
       pay_method: Array,
       services: Array,
       place: Array,
+      departmentValue: Object,
+      provinceValue: Object,
+      districtValue: Object,
     },
     { timestamps: true }
   )
