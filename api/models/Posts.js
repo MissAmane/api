@@ -46,7 +46,7 @@ const Posts = mongoose.model(
       place: Array,
       departmentValue: Object,
       provinceValue: Object,
-      districtValue: Object,
+      districtValue: Array,
     },
     { timestamps: true }
   )
