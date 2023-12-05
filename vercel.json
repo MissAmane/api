@@ -1,6 +1,12 @@
 {
   "version": 2,
   "name": "mansion-api",
+  "builds": [
+    {
+      "src": "/api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
