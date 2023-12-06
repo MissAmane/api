@@ -49,7 +49,7 @@ router.put("/:id", isAuthenticated, hasRoles(["admin", "user"]), (req, res) => {
 });
 
 router.delete("/:id", isAuthenticated, (req, res) => {
-  Posts.findOneAndDelete(req.params.id)
+  Posts.findOneAndDelete({ _id: req.params.id })
     .exec()
     .then(() => res.sendStatus(204));
 });
