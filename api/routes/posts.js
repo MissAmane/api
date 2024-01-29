@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
       rate_1h: 1,
       verified: 1,
       districtValue: 1,
+      age: 1,
     }
   )
     .exec()
