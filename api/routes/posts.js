@@ -5,8 +5,15 @@ const { isAuthenticated, hasRoles } = require("../auth");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  Posts.find(
+  const limit = req.query.limit || 30;
+  const page = req.query.page || 1;
+
+  Posts.paginate(
     { status: true },
+    {
+      limit,
+      page,
+    },
     {
       name: 1,
       nationality: 1,
