@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   const limit = req.query.limit || 30;
   const page = req.query.page || 1;
 
-  const Posts = await Posts.paginate(
+  const posts = await Posts.paginate(
     { status: true },
     {
       limit,
@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     }
   );
 
-  res.json(Posts);
+  res.json(posts);
 });
 
 router.get("/:id", (req, res) => {
