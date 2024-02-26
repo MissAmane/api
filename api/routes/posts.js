@@ -4,11 +4,11 @@ const { isAuthenticated, hasRoles } = require("../auth");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   const limit = req.query.limit || 30;
   const page = req.query.page || 1;
 
-  Posts.paginate(
+  const Posts = await Posts.paginate(
     { status: true },
     {
       limit,
@@ -23,9 +23,9 @@ router.get("/", (req, res) => {
       districtValue: 1,
       age: 1,
     }
-  )
-    .exec()
-    .then((x) => res.status(200).send(x));
+  );
+
+  res.json(Posts);
 });
 
 router.get("/:id", (req, res) => {
