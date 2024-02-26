@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     }
   );
 
-  res.json(posts);
+  return res.status(200).send({ posts });
 });
 
 router.get("/:id", (req, res) => {
