@@ -7,22 +7,15 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   const limit = req.query.limit || 30;
   const page = req.query.page || 1;
+  const select =
+    "name nationality images rate_1h verified districtValue age alwaysOn";
 
   const posts = await Posts.paginate(
     { status: true },
     {
       limit,
       page,
-    },
-    {
-      name: 1,
-      nationality: 1,
-      images: 1,
-      rate_1h: 1,
-      verified: 1,
-      districtValue: 1,
-      age: 1,
-      alwaysOn: 1,
+      select,
     }
   );
 
