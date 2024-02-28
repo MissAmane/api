@@ -22,6 +22,7 @@ router.get("/", async (req, res) => {
       verified: 1,
       districtValue: 1,
       age: 1,
+      alwaysOn: 1,
     }
   );
 

@@ -46,6 +46,10 @@ const PostsSchema = new Schema(
     departmentValue: Object,
     provinceValue: Object,
     districtValue: Array,
+    alwaysOn: Boolean,
+    days: Array,
+    iniTime: Object,
+    endTime: Object,
   },
   { timestamps: true }
 );
