@@ -16,9 +16,6 @@ router.get("/", async (req, res) => {
       limit,
       page,
       select,
-      sort: {
-        verified: -1,
-      },
     }
   );
 
