@@ -18,6 +18,7 @@ router.get("/", async (req, res) => {
       select,
       sort: {
         verified: -1,
+        _id: 1,
       },
     }
   );
