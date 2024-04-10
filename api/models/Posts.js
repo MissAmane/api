@@ -13,11 +13,13 @@ const PostsSchema = new Schema(
     verified: Boolean,
     status: { type: Boolean, default: true }, //for Post status
     phone: {
-      type: Number,
+      type: String,
       required: true,
       validate: {
         validator: function (v) {
-          return /(9{1})(\d{0,8})$/.test(v);
+          return /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{3,4}$/.test(
+            v
+          );
         },
         message: (props) => `${props.value} no es un número válido!`,
       },
