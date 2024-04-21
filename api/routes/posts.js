@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   const limit = req.query.limit || 30;
   const page = req.query.page || 1;
   const select =
-    "name nationality images profession rate_1h verified districtValue age alwaysOn days iniTime endTime";
+    "name nationality images profession rate_1h verified vip districtValue age alwaysOn days iniTime endTime";
 
   const posts = await Posts.paginate(
     { status: true },
