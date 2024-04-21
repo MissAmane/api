@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
       page,
       select,
       sort: {
+        vip: -1,
         verified: -1,
         _id: 1,
       },
